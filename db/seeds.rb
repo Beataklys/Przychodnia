@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+10.times do
+ Doctor.create(name: Faker::Name.name)
+end
+
+100.times do
+ pesel = Activepesel::Pesel.generate(:one,
+         :sex => [1,2].sample,
+         :date_of_birth => Faker::Time.between(DateTime.now - 3000, DateTime.now)).number
+ Patient.create(name: Faker::Name.name, pesel: pesel)
+end
+
+puts "Done!"

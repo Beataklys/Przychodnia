@@ -1,0 +1,12 @@
+<%= form_tag new_irena_path, method: "get" do %>
+
+Search for:
+<%= label_tag(:q, "by name :") %>
+<%= text_field_tag(:q) %>
+
+<%= label_tag(:p, "by pesel:") %>
+<%= text_field_tag(:p) %>
+
+<%= hidden_field_tag(:doctor_id, @doctor.id) %>
+<%= submit_tag("Search") %>
+<% end %>
