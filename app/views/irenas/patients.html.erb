@@ -8,5 +8,6 @@ Search for:
 <%= text_field_tag(:p) %>
 
 <%= hidden_field_tag(:doctor_id, @doctor.id) %>
+<%= hidden_field_tag(:date, params[:date]) %>
 <%= submit_tag("Search") %>
 <% end %>
